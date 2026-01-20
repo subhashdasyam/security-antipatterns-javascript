@@ -1,5 +1,5 @@
 ---
-name: security-antipatterns-nodejs
+name: security-antipatterns-javascript
 description: Code generation guard for Node.js/TypeScript/Next.js - prevents OWASP Top 10 vulnerabilities while writing code
 ---
 
