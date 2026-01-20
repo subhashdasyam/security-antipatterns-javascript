@@ -47,10 +47,11 @@ Reference these modules for specific vulnerability patterns:
 | [input-validation.md](references/input-validation.md) | Validation, mass assignment, path traversal, uploads | A03:2021, API3 |
 | [prototype-pollution.md](references/prototype-pollution.md) | JS prototype pollution attacks | CWE-1321 |
 | [typescript-safety.md](references/typescript-safety.md) | Type safety gaps, runtime validation | CWE-843 |
-| [nextjs-security.md](references/nextjs-security.md) | Middleware bypass, Server Actions, RSC, SSRF | CVE-2025-29927 |
+| [nextjs-security.md](references/nextjs-security.md) | Middleware bypass, Server Actions, SSRF | CVE-2025-29927, CVE-2025-66478 |
+| [rsc-security.md](references/rsc-security.md) | RSC deserialization (React2Shell), DoS, Server Action abuse | CVE-2025-55182, CVE-2025-55184 |
 | [api-infra.md](references/api-infra.md) | Rate limiting, CORS, headers, error handling | API4, API6-7 |
-| [dependencies.md](references/dependencies.md) | Supply chain, slopsquatting, typosquatting | A06:2021 |
-| [nodejs-runtime.md](references/nodejs-runtime.md) | ReDoS, event loop blocking, child processes | CWE-1333 |
+| [dependencies.md](references/dependencies.md) | Supply chain, slopsquatting, NPM malware, PhantomRaven | A06:2021, CWE-506 |
+| [nodejs-runtime.md](references/nodejs-runtime.md) | ReDoS, async hooks exhaustion, HTTP/2 DoS, child processes | CWE-1333, CVE-2025-59466 |
 
 ## How to Use This Skill
 
@@ -70,7 +71,8 @@ When generating code:
 | User authentication | references/auth-access.md, references/crypto-secrets.md |
 | Form handling | references/input-validation.md, references/xss-output.md |
 | File operations | references/input-validation.md, references/nodejs-runtime.md |
-| Next.js Server Actions | references/nextjs-security.md, references/auth-access.md |
+| Next.js Server Actions | references/nextjs-security.md, references/rsc-security.md, references/auth-access.md |
+| React Server Components | references/rsc-security.md, references/nextjs-security.md |
 | Third-party package usage | references/dependencies.md |
 | Rendering user content | references/xss-output.md |
 | Environment/config | references/crypto-secrets.md |

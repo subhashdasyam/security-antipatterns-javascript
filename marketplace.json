@@ -15,11 +15,14 @@
         "nodejs",
         "typescript",
         "nextjs",
+        "react-server-components",
         "owasp",
         "injection",
         "xss",
         "authentication",
         "cryptography",
+        "supply-chain",
+        "npm-malware",
         "code-review"
     ],
     "skills": [
@@ -68,7 +71,12 @@
         {
             "name": "nextjs-security",
             "source": "./references/nextjs-security.md",
-            "description": "Next.js middleware bypass, Server Actions, RSC, SSRF patterns"
+            "description": "Next.js middleware bypass (CVE-2025-29927), Server Actions, SSRF patterns"
+        },
+        {
+            "name": "rsc-security",
+            "source": "./references/rsc-security.md",
+            "description": "React Server Components deserialization (React2Shell CVE-2025-55182), DoS (CVE-2025-55184), Server Action abuse"
         },
         {
             "name": "api-infra",
@@ -78,12 +86,12 @@
         {
             "name": "dependencies",
             "source": "./references/dependencies.md",
-            "description": "Supply chain, slopsquatting, typosquatting vulnerabilities"
+            "description": "Supply chain attacks, NPM malware, PhantomRaven invisible dependencies, slopsquatting"
         },
         {
             "name": "nodejs-runtime",
             "source": "./references/nodejs-runtime.md",
-            "description": "ReDoS, event loop blocking, child processes"
+            "description": "ReDoS, async hooks exhaustion (CVE-2025-59466), HTTP/2 DoS, child processes"
         }
     ]
 }

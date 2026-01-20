@@ -20,7 +20,7 @@ This skill intercepts those patterns and fixes them.
 
 ## What it catches
 
-11 modules covering OWASP Top 10 and JavaScript-specific issues:
+12 modules covering OWASP Top 10 and JavaScript-specific issues:
 
 | Module | What it prevents |
 |--------|------------------|
@@ -31,10 +31,11 @@ This skill intercepts those patterns and fixes them.
 | input-validation.md | Missing zod/yup validation, file upload attacks |
 | prototype-pollution.md | Object.assign attacks, deep merge vulnerabilities |
 | typescript-safety.md | Type coercion bugs, runtime validation gaps |
-| nextjs-security.md | Middleware bypass, Server Actions pitfalls, RSC issues |
+| nextjs-security.md | Middleware bypass (CVE-2025-29927), Server Actions, SSRF |
+| rsc-security.md | RSC deserialization (React2Shell), DoS attacks, Server Action abuse |
 | api-infra.md | Missing rate limits, CORS misconfiguration, security headers |
-| dependencies.md | Supply chain attacks, typosquatting |
-| nodejs-runtime.md | ReDoS, event loop blocking, child_process dangers |
+| dependencies.md | Supply chain attacks, NPM malware, PhantomRaven patterns |
+| nodejs-runtime.md | ReDoS, async hooks exhaustion, HTTP/2 DoS, child_process dangers |
 
 ## The short version
 
@@ -102,9 +103,11 @@ Kicks in when you're generating:
 
 - Express or Fastify routes
 - Next.js API routes or Server Actions
+- React Server Components (RSC)
 - Database queries (Prisma, Drizzle, raw SQL, MongoDB)
 - Authentication logic
 - File upload handlers
+- Package installations or dependency management
 - Anything touching user input
 
 ## License
