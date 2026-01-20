@@ -32,57 +32,57 @@
     "resources": [
         {
             "name": "injection",
-            "source": "./injection.md",
+            "source": "./references/injection.md",
             "description": "SQL, Command, NoSQL, Template, LDAP injection patterns (CWE-89, CWE-78)"
         },
         {
             "name": "xss-output",
-            "source": "./xss-output.md",
+            "source": "./references/xss-output.md",
             "description": "XSS (Reflected, Stored, DOM) and output encoding (CWE-79)"
         },
         {
             "name": "auth-access",
-            "source": "./auth-access.md",
+            "source": "./references/auth-access.md",
             "description": "BOLA, BFLA, authentication, sessions, JWT, NextAuth patterns"
         },
         {
             "name": "crypto-secrets",
-            "source": "./crypto-secrets.md",
+            "source": "./references/crypto-secrets.md",
             "description": "Secrets management, encryption, hashing, key derivation"
         },
         {
             "name": "input-validation",
-            "source": "./input-validation.md",
+            "source": "./references/input-validation.md",
             "description": "Validation, mass assignment, path traversal, file uploads"
         },
         {
             "name": "prototype-pollution",
-            "source": "./prototype-pollution.md",
+            "source": "./references/prototype-pollution.md",
             "description": "JavaScript prototype pollution attack patterns (CWE-1321)"
         },
         {
             "name": "typescript-safety",
-            "source": "./typescript-safety.md",
+            "source": "./references/typescript-safety.md",
             "description": "TypeScript type safety gaps and runtime validation"
         },
         {
             "name": "nextjs-security",
-            "source": "./nextjs-security.md",
+            "source": "./references/nextjs-security.md",
             "description": "Next.js middleware bypass, Server Actions, RSC, SSRF patterns"
         },
         {
             "name": "api-infra",
-            "source": "./api-infra.md",
+            "source": "./references/api-infra.md",
             "description": "Rate limiting, CORS, headers, error handling"
         },
         {
             "name": "dependencies",
-            "source": "./dependencies.md",
+            "source": "./references/dependencies.md",
             "description": "Supply chain, slopsquatting, typosquatting vulnerabilities"
         },
         {
             "name": "nodejs-runtime",
-            "source": "./nodejs-runtime.md",
+            "source": "./references/nodejs-runtime.md",
             "description": "ReDoS, event loop blocking, child processes"
         }
     ]

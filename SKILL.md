@@ -1,6 +1,8 @@
 ---
 name: security-antipatterns-javascript
 description: Code generation guard for Node.js/TypeScript/Next.js - prevents OWASP Top 10 vulnerabilities while writing code
+version: "1.0.0"
+allowed-tools: "Read"
 ---
 
 # Security Anti-Patterns Guard for Node.js/TypeScript/Next.js
@@ -36,17 +38,17 @@ Reference these modules for specific vulnerability patterns:
 
 | Module | Covers | OWASP Reference |
 |--------|--------|-----------------|
-| [injection.md](./injection.md) | SQL, Command, NoSQL, Template, LDAP injection | A03:2021 |
-| [xss-output.md](./xss-output.md) | XSS (Reflected, Stored, DOM), output encoding | A03:2021 |
-| [auth-access.md](./auth-access.md) | BOLA, BFLA, auth, sessions, JWT | API1-3, API5 |
-| [crypto-secrets.md](./crypto-secrets.md) | Secrets management, encryption, hashing | A02:2021 |
-| [input-validation.md](./input-validation.md) | Validation, mass assignment, path traversal, uploads | A03:2021, API3 |
-| [prototype-pollution.md](./prototype-pollution.md) | JS prototype pollution attacks | CWE-1321 |
-| [typescript-safety.md](./typescript-safety.md) | Type safety gaps, runtime validation | CWE-843 |
-| [nextjs-security.md](./nextjs-security.md) | Middleware bypass, Server Actions, RSC, SSRF | CVE-2025-29927 |
-| [api-infra.md](./api-infra.md) | Rate limiting, CORS, headers, error handling | API4, API6-7 |
-| [dependencies.md](./dependencies.md) | Supply chain, slopsquatting, typosquatting | A06:2021 |
-| [nodejs-runtime.md](./nodejs-runtime.md) | ReDoS, event loop blocking, child processes | CWE-1333 |
+| [injection.md]({baseDir}/references/injection.md) | SQL, Command, NoSQL, Template, LDAP injection | A03:2021 |
+| [xss-output.md]({baseDir}/references/xss-output.md) | XSS (Reflected, Stored, DOM), output encoding | A03:2021 |
+| [auth-access.md]({baseDir}/references/auth-access.md) | BOLA, BFLA, auth, sessions, JWT | API1-3, API5 |
+| [crypto-secrets.md]({baseDir}/references/crypto-secrets.md) | Secrets management, encryption, hashing | A02:2021 |
+| [input-validation.md]({baseDir}/references/input-validation.md) | Validation, mass assignment, path traversal, uploads | A03:2021, API3 |
+| [prototype-pollution.md]({baseDir}/references/prototype-pollution.md) | JS prototype pollution attacks | CWE-1321 |
+| [typescript-safety.md]({baseDir}/references/typescript-safety.md) | Type safety gaps, runtime validation | CWE-843 |
+| [nextjs-security.md]({baseDir}/references/nextjs-security.md) | Middleware bypass, Server Actions, RSC, SSRF | CVE-2025-29927 |
+| [api-infra.md]({baseDir}/references/api-infra.md) | Rate limiting, CORS, headers, error handling | API4, API6-7 |
+| [dependencies.md]({baseDir}/references/dependencies.md) | Supply chain, slopsquatting, typosquatting | A06:2021 |
+| [nodejs-runtime.md]({baseDir}/references/nodejs-runtime.md) | ReDoS, event loop blocking, child processes | CWE-1333 |
 
 ## How to Use This Skill
 
@@ -61,16 +63,16 @@ When generating code:
 
 | Writing... | Reference |
 |------------|-----------|
-| Database queries | injection.md, input-validation.md |
-| API route/endpoint | auth-access.md, api-infra.md, input-validation.md |
-| User authentication | auth-access.md, crypto-secrets.md |
-| Form handling | input-validation.md, xss-output.md |
-| File operations | input-validation.md, nodejs-runtime.md |
-| Next.js Server Actions | nextjs-security.md, auth-access.md |
-| Third-party package usage | dependencies.md |
-| Rendering user content | xss-output.md |
-| Environment/config | crypto-secrets.md |
-| Child processes | nodejs-runtime.md, injection.md |
+| Database queries | {baseDir}/references/injection.md, {baseDir}/references/input-validation.md |
+| API route/endpoint | {baseDir}/references/auth-access.md, {baseDir}/references/api-infra.md, {baseDir}/references/input-validation.md |
+| User authentication | {baseDir}/references/auth-access.md, {baseDir}/references/crypto-secrets.md |
+| Form handling | {baseDir}/references/input-validation.md, {baseDir}/references/xss-output.md |
+| File operations | {baseDir}/references/input-validation.md, {baseDir}/references/nodejs-runtime.md |
+| Next.js Server Actions | {baseDir}/references/nextjs-security.md, {baseDir}/references/auth-access.md |
+| Third-party package usage | {baseDir}/references/dependencies.md |
+| Rendering user content | {baseDir}/references/xss-output.md |
+| Environment/config | {baseDir}/references/crypto-secrets.md |
+| Child processes | {baseDir}/references/nodejs-runtime.md, {baseDir}/references/injection.md |
 
 ## Response Format
 
