@@ -1,66 +1,111 @@
 # Security Anti-Patterns for JavaScript
 
-A skill for AI coding assistants that stops you from writing insecure JavaScript, TypeScript, and Next.js code.
+AI coding agents don't think about security. They generate code that works, ship it, and move on. This skill makes them paranoid - in a good way.
+
+## The problem
+
+Here's what happens when you ask an AI to build an API endpoint:
+
+```javascript
+// AI-generated code - compiles fine, fails audit
+app.get('/user/:id', async (req, res) => {
+  const user = await db.query(`SELECT * FROM users WHERE id = ${req.params.id}`);
+  res.json(user);
+});
+```
+
+No input validation. SQL injection. No auth check. The AI optimized for "fewest lines of code" instead of "won't get hacked."
+
+This skill intercepts those patterns and fixes them.
+
+## What it catches
+
+11 modules covering OWASP Top 10 and JavaScript-specific issues:
+
+| Module | What it prevents |
+|--------|------------------|
+| injection.md | SQL injection, command injection, NoSQL injection |
+| xss-output.md | Cross-site scripting, missing output encoding |
+| auth-access.md | Broken access control, BOLA, session issues |
+| crypto-secrets.md | Weak hashing, hardcoded API keys, Math.random() for tokens |
+| input-validation.md | Missing zod/yup validation, file upload attacks |
+| prototype-pollution.md | Object.assign attacks, deep merge vulnerabilities |
+| typescript-safety.md | Type coercion bugs, runtime validation gaps |
+| nextjs-security.md | Middleware bypass, Server Actions pitfalls, RSC issues |
+| api-infra.md | Missing rate limits, CORS misconfiguration, security headers |
+| dependencies.md | Supply chain attacks, typosquatting |
+| nodejs-runtime.md | ReDoS, event loop blocking, child_process dangers |
+
+## The short version
+
+- Never concatenate strings into queries. Use parameterized queries or an ORM.
+- Never `Math.random()` for tokens. Use `crypto.randomUUID()`.
+- Never trust middleware alone for auth. Check ownership in the handler.
+- Always validate at API boundaries with zod or similar.
+- Never `eval()` or `new Function()` with user input.
+
+The skill has code examples showing what breaks and what doesn't.
 
 ## Supported platforms
 
 | Platform | Status |
 |----------|--------|
-| Claude Code | Supported |
-| Antigravity | TODO |
-| Codex | TODO |
+| Claude Code | Works |
+| OpenAI Codex | Works |
+| Google Antigravity | Works |
+| Warp | Works |
+| VS Code Copilot | Works |
 
-## What it does
-
-When you're writing code that touches databases, handles user input, or deals with authentication, this skill kicks in and steers you away from common security mistakes. It covers the OWASP Top 10 and then some.
+This skill follows the [Agent Skills open standard](https://agentskills.io/). Works with any compatible AI tool.
 
 ## Installation
 
 ### Claude Code
 
-Clone to your personal skills directory:
+Clone to your skills directory:
 
 ```bash
 git clone https://github.com/subhashdasyam/security-antipatterns-javascript ~/.claude/skills/security-antipatterns-javascript
 ```
 
-For project-specific use, clone to `.claude/skills/` in your repo instead.
+Or clone to `.claude/skills/` in a specific project.
 
-### Other platforms
+### OpenAI Codex CLI
 
-Instructions coming once support is added.
+```bash
+mkdir -p ~/.codex/skills
+ln -s $(pwd) ~/.codex/skills/security-antipatterns-javascript
+```
 
-## Coverage
+### Google Antigravity
 
-The skill includes 11 modules:
+```bash
+mkdir -p ~/.antigravity/skills
+ln -s $(pwd) ~/.antigravity/skills/security-antipatterns-javascript
+```
 
-- **injection.md** - SQL injection, command injection, NoSQL injection
-- **xss-output.md** - Cross-site scripting and output encoding
-- **auth-access.md** - Broken access control, BOLA, session management
-- **crypto-secrets.md** - Password hashing, secrets management, encryption
-- **input-validation.md** - Schema validation, file uploads, path traversal
-- **prototype-pollution.md** - JavaScript-specific prototype attacks
-- **typescript-safety.md** - Type coercion bugs and runtime validation gaps
-- **nextjs-security.md** - Middleware bypass, Server Actions, RSC pitfalls
-- **api-infra.md** - Rate limiting, CORS, security headers
-- **dependencies.md** - Supply chain attacks, typosquatting
-- **nodejs-runtime.md** - ReDoS, event loop blocking, child process safety
+### Warp Terminal
 
-## The short version
+Copy to `~/.warp/skills/` or configure skill path in settings.
 
-Don't concatenate strings into SQL queries. Don't use `Math.random()` for tokens. Don't trust middleware alone for auth. Always check that users own what they're trying to access. Validate everything at API boundaries with zod or similar.
+### VS Code Copilot
 
-The skill has the full details with code examples showing what not to do and what to do instead.
+Copy skill folder to `.github/skills/` in your project.
+
+### Other tools
+
+Symlink or copy this folder to your tool's skills directory. Standard format - it should just work.
 
 ## When it activates
 
-Any time you're generating:
+Kicks in when you're generating:
+
 - Express or Fastify routes
 - Next.js API routes or Server Actions
 - Database queries (Prisma, Drizzle, raw SQL, MongoDB)
 - Authentication logic
 - File upload handlers
-- Anything that touches user input
+- Anything touching user input
 
 ## License
 

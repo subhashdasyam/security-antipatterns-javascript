@@ -3,6 +3,8 @@ name: security-antipatterns-javascript
 description: Code generation guard for Node.js/TypeScript/Next.js - prevents OWASP Top 10 vulnerabilities while writing code
 version: "1.0.0"
 allowed-tools: "Read"
+metadata:
+  short-description: Prevents OWASP Top 10 vulnerabilities in JavaScript/Node.js
 ---
 
 # Security Anti-Patterns Guard for Node.js/TypeScript/Next.js
