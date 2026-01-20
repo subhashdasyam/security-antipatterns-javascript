@@ -1,0 +1,89 @@
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "security-antipatterns-javascript",
+    "version": "1.0.0",
+    "description": "Code generation guard for JavaScript/TypeScript/Next.js - prevents OWASP Top 10 vulnerabilities while writing code. Covers injection, XSS, authentication, cryptography, and framework-specific security patterns.",
+    "author": "Subhash Dasyam",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/subhashdasyam/security-antipatterns-javascript"
+    },
+    "keywords": [
+        "security",
+        "javascript",
+        "nodejs",
+        "typescript",
+        "nextjs",
+        "owasp",
+        "injection",
+        "xss",
+        "authentication",
+        "cryptography",
+        "code-review"
+    ],
+    "skills": [
+        {
+            "name": "security-antipatterns-javascript",
+            "source": "./SKILL.md",
+            "description": "Security anti-patterns guard for JavaScript/TypeScript/Next.js applications"
+        }
+    ],
+    "resources": [
+        {
+            "name": "injection",
+            "source": "./injection.md",
+            "description": "SQL, Command, NoSQL, Template, LDAP injection patterns (CWE-89, CWE-78)"
+        },
+        {
+            "name": "xss-output",
+            "source": "./xss-output.md",
+            "description": "XSS (Reflected, Stored, DOM) and output encoding (CWE-79)"
+        },
+        {
+            "name": "auth-access",
+            "source": "./auth-access.md",
+            "description": "BOLA, BFLA, authentication, sessions, JWT, NextAuth patterns"
+        },
+        {
+            "name": "crypto-secrets",
+            "source": "./crypto-secrets.md",
+            "description": "Secrets management, encryption, hashing, key derivation"
+        },
+        {
+            "name": "input-validation",
+            "source": "./input-validation.md",
+            "description": "Validation, mass assignment, path traversal, file uploads"
+        },
+        {
+            "name": "prototype-pollution",
+            "source": "./prototype-pollution.md",
+            "description": "JavaScript prototype pollution attack patterns (CWE-1321)"
+        },
+        {
+            "name": "typescript-safety",
+            "source": "./typescript-safety.md",
+            "description": "TypeScript type safety gaps and runtime validation"
+        },
+        {
+            "name": "nextjs-security",
+            "source": "./nextjs-security.md",
+            "description": "Next.js middleware bypass, Server Actions, RSC, SSRF patterns"
+        },
+        {
+            "name": "api-infra",
+            "source": "./api-infra.md",
+            "description": "Rate limiting, CORS, headers, error handling"
+        },
+        {
+            "name": "dependencies",
+            "source": "./dependencies.md",
+            "description": "Supply chain, slopsquatting, typosquatting vulnerabilities"
+        },
+        {
+            "name": "nodejs-runtime",
+            "source": "./nodejs-runtime.md",
+            "description": "ReDoS, event loop blocking, child processes"
+        }
+    ]
+}
