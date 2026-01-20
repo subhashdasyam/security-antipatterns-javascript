@@ -18,11 +18,13 @@ When you're writing code that touches databases, handles user input, or deals wi
 
 ### Claude Code
 
+Clone to your personal skills directory:
+
 ```bash
-claude mcp add-skill https://github.com/subhashdasyam/security-antipatterns-javascript
+git clone https://github.com/subhashdasyam/security-antipatterns-javascript ~/.claude/skills/security-antipatterns-javascript
 ```
 
-Or add it manually to your settings.
+For project-specific use, clone to `.claude/skills/` in your repo instead.
 
 ### Other platforms
 
